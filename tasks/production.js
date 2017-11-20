@@ -18,13 +18,13 @@ var postcss = require('gulp-postcss')
 // Copy index.html file.
 gulp.task('production-html', function() {
     return gulp.src('src/index.html')
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
 })
 
 // Copy fonts.
 gulp.task('production-fonts', function() {
     return gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('dist/fonts'))
 })
 
 // Copy images and minify them.
@@ -32,7 +32,7 @@ gulp.task('production-images', function() {
     return gulp.src('src/images/**/*')
         .pipe(newer('dist/images'))
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest('dist/images'))
 })
 
 // CSS settings.
@@ -65,7 +65,7 @@ gulp.task('production-css', ['production-images'], function() {
     return gulp.src(css.src)
         .pipe(sass(css.sassOpts))
         .pipe(postcss(css.processors))
-        .pipe(gulp.dest(css.build));
+        .pipe(gulp.dest(css.build))
 })
 
 // Build scripts.
@@ -87,7 +87,7 @@ gulp.task('production-js', function() {
         .pipe(uglify())
         .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/js'))
 })
 
 

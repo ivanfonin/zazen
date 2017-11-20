@@ -1,5 +1,6 @@
-'use strict';
+'use strict'
 
-var gulp = require('gulp');
+var gulp = require('gulp')
 
-gulp.task('default', ['build', 'watch']);
+// Run build task first and watch files for changes.
+gulp.task('default', ['build', 'watch'])

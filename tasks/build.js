@@ -1,36 +1,36 @@
-'use strict';
+'use strict'
 
-var gulp = require('gulp');
-var browserify = require('browserify');
-var vueify = require('vueify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var newer = require('gulp-newer');
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
+var gulp = require('gulp')
+var browserify = require('browserify')
+var vueify = require('vueify')
+var babelify = require('babelify')
+var source = require('vinyl-source-stream')
+var buffer = require('vinyl-buffer')
+var gutil = require('gulp-util')
+var uglify = require('gulp-uglify')
+var sourcemaps = require('gulp-sourcemaps')
+var newer = require('gulp-newer')
+var sass = require('gulp-sass')
+var postcss = require('gulp-postcss')
 
 // Copy index.html file.
 gulp.task('html', function() {
     return gulp.src('src/index.html')
-        .pipe(gulp.dest('dist'));
-});
+        .pipe(gulp.dest('dist'))
+})
 
 // Copy fonts.
 gulp.task('fonts', function() {
     return gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest('dist/fonts'));
-});
+        .pipe(gulp.dest('dist/fonts'))
+})
 
 // Copy images.
 gulp.task('images', function() {
     return gulp.src('src/images/**/*')
         .pipe(newer('dist/images'))
-        .pipe(gulp.dest('dist/images'));
-});
+        .pipe(gulp.dest('dist/images'))
+})
 
 // Compile CSS.
 gulp.task('css', ['images'], function() {
@@ -53,8 +53,8 @@ gulp.task('css', ['images'], function() {
           require('css-mqpacker'),
           require('cssnano')
         ]))
-        .pipe(gulp.dest('dist/css'));
-});
+        .pipe(gulp.dest('dist/css'))
+})
 
 // Build scripts.
 gulp.task('js', function() {
@@ -70,9 +70,9 @@ gulp.task('js', function() {
         .pipe(uglify())
         .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('dist/js'));
-});
+    .pipe(gulp.dest('dist/js'))
+})
 
 
 // Build task.
-gulp.task('build', ['html', 'fonts', 'css', 'js']);
+gulp.task('build', ['html', 'fonts', 'css', 'js'])
