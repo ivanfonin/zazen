@@ -71,7 +71,11 @@ gulp.task('production-css', ['production-images'], function() {
 // Build scripts.
 gulp.task('production-js', function() {
     // Set up the browserify instance on a task basis.
-  return browserify({entries: 'src/js/main.js', extensions: ['.js'], debug: true})
+  return browserify({
+      entries: 'src/js/main.js',
+      extensions: ['.js'],
+      debug: true
+    })
     .transform(vueify)
     .transform(
         // Required in order to process node_modules files
@@ -82,7 +86,7 @@ gulp.task('production-js', function() {
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.init({ loadMaps: true }))
         // Add transformation tasks to the pipeline here.
         .pipe(uglify())
         .on('error', gutil.log)
