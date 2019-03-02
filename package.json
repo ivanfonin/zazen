@@ -36,9 +36,9 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "uikit": "^3.0.0-rc.19",
-    "vue": "^2.5.16",
-    "vue-router": "^3.0.1",
+    "uikit": "^3.0.3",
+    "vue": "^2.6.8",
+    "vue-router": "^3.0.2",
     "vueify": "^9.4.1"
   }
 }
