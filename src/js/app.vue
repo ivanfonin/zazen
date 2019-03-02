@@ -1,21 +1,17 @@
 <template>
 
-    <div class="uk-offcanvas-content">
+    <div>
 
         <router-view></router-view>
 
-        <div id="offcanvas" uk-offcanvas="mode: push; overlay: true">
+        <div id="offcanvas" data-uk-offcanvas="mode: push; overlay: true">
             <div class="uk-offcanvas-bar">
                 <div class="uk-panel">
-
-                    <ul class="uk-nav uk-nav-default tm-nav">
-                        <li class="uk-nav-header">General</li>
-                        <li><router-link to="/">Home</router-link></li>
-                        <li><router-link to="pro">Pro</router-link></li>
-                        <li><router-link to="home">Home</router-link></li>
-                        <li><router-link to="download">Download</router-link></li>
+                    <ul class="uk-nav uk-nav-default">
+                        <router-link to="/" tag="li"><a>Homepage</a></router-link>
+                        <router-link to="/pro" tag="li"><a>Pro</a></router-link>
+                        <router-link to="/erorr" tag="li"><a>Error</a></router-link>
                     </ul>
-                    
                 </div>
             </div>
         </div>

@@ -4,3 +4,40 @@ html, body {
     background-color: #f9f9f9;
     color: #1d1d1d;
 }
+
+// app.scss
+// https://getuikit.com/docs/sass
+
+//@import "fonts.scss";
+
+// 1. Custom variables and variable overwrites.
+/*
+@import "theme/variables.scss";
+@import "theme/base.scss";
+@import "theme/button.scss";
+@import "theme/dropdown.scss";
+@import "theme/navbar.scss";
+@import "theme/offcanvas.scss";
+@import "theme/utility.scss";
+*/
+// ... import all
+
+// 2. Import default variables and available mixins.
+@import "uikit/variables.scss";
+@import "uikit/mixins.scss";
+
+// 3. Custom mixin overwrites.
+/*
+@import "theme/base-mixins.scss";
+@import "theme/button-mixins.scss";
+@import "theme/dropdown-mixins.scss";
+*/
+@import "theme/navbar-mixins.scss";
+/*
+@import "theme/offcanvas-mixins.scss";
+@import "theme/utility-mixins.scss";
+*/
+// ... import all
+
+// 4. Import UIkit.
+@import "uikit/uikit.scss";
